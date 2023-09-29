@@ -17,6 +17,8 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8080
 
+ENV OPENAI_API_KEY=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
+
 HEALTHCHECK CMD curl --fail http://localhost:8080/_stcore/health
 
 ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=8080", "--server.address=0.0.0.0"]
